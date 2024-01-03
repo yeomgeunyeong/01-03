@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script lang="java">
+
+        yeom_array = new Array(5);
+
+        yeom_array[0]="염근영"
+        yeom_array[1]="컴퓨터정보처리"
+        yeom_array[2]="20240103"
+        yeom_array[3]="168cm"
+        yeom_array[4]="여자"
+
+
+        document.write("<h3>");
+
+        // for(초기갑; 조건; 증감값){
+        //     조건에 만족할 동안 처리값
+        // }
+
+        for(var i=0; i<=4; i++){
+            document.write("["+i+ "]" + yeom_array[i] + "<br>")
+        }
+
+        document.write("</h3>");
+
+
+
+        array1=new Array("사과", "배", "바나나");
+        array2=new Array("가", "나", "다");
+
+        document.write(array1.join()+"<br>");
+        document.write(array1.join("와 ")+"<br>");
+        document.write(array1.join("&")+"<br>");
+        
+        
+        document.write(array2.sort()+"<br>");
+        document.write(array1.sort()+"<br>");
+
+
+        document.write(array1.reverse()+"<br>");
+        document.write(array2.reverse()+"<br>");
+
+
+        array3 = array1.concat(array2)
+
+        document.write(array3+"<br>")
+
+        array4=array3.slice(1,3) //1번부터 3번 안에 있는 내용 가져와
+        document.write(array4+"<br>")
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
