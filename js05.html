@@ -55,17 +55,23 @@
         const speed=100;
         // 한번만 선언되는 선언문, 수정x
 
-        let i = 0;
+        let i = 0; //글자수를 세기 위해서 
+        // 숫자데이터를 받을때 주로 쓰는 선언문
+
 
         //타이핑 효과
         
         const typing = async() =>{
             letter=letters[i].split("");
+            // split 나눠주다. 공백("")으로 나눌거야.
+            console.log(letter);
+
 
             while(letter.length){
                 text=document.querySelector(".text");
                 await wait(speed);
                 text.innerHTML+=letter.shift();
+                //shift 뒤로 밀어주는것, pop과 반대 
             }
 
             await wait(800);
@@ -83,10 +89,11 @@
             while(letter.length){
                 await wait(speed);
                 letter.pop();
+                //pop 앞으로 밀어주는 것 , shift와 반대
                 text.innerHTML=letter.join("")
             }
 
-            i=!letters[i+1]?0:i+1;
+            i=!letters[i+1] ? 0 : i+1;
             typing()
 
         }
@@ -94,6 +101,14 @@
         setTimeout(typing, 1500)
 
 
+
+        function getFee(Member){
+            return Member ? "$2" : "$10";
+        }
+
+        console.log(  getFee(true) )
+        console.log(  getFee(false) )
+        console.log(  getFee(null) )
 
 
 
@@ -143,6 +158,6 @@
     </script>
 </head>
 <body>
-    <div class="typing">Language! <h1 class="text"></h1> </div>
+    <div class="typing">Language! &nbsp;<h1 class="text"></h1> </div>
 </body>
 </html>
